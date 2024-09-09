@@ -105,9 +105,17 @@
             text-align: center;
             transition: background-color 0.3s ease;
             text-decoration: none;
+            float: right;
         }
         .add-products-button:hover {
             background-color: #218838;
+        }
+        .heading-container {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -123,7 +131,12 @@
             <button class="view-more-button">View More</button>
         </div>
     </div>
-    <h1>Products</h1>
+
+    <div class="heading-container">
+        <h1>Products</h1>
+        <a href="/add-product" class="add-products-button">Add Products</a>
+    </div>
+
     <div class="card-container">
         {% for item in datas %}
             <div class="card">
@@ -137,6 +150,5 @@
             </div>
         {% endfor %}
     </div>
-    <a href="/add-product" class="add-products-button">Add Products</a>
 </body>
 </html>
