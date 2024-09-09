@@ -6,7 +6,7 @@ import io
 
 app=Flask(__name__)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://yogi:passwd@localhost/todo"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgresql://farm_test_user:KcAMdxzOVawCoypFuvWwLpiKntHD1v9B@dpg-crf8snbgbbvc73c0nvk0-a.oregon-postgres.render.com/farm_test"
 
 db = SQLAlchemy(app)
 
