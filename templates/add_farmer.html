@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Farmer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Add a New Farmer</h1>
+    <form action="/add-farmer" method="POST">
+        <p>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" maxlength="100" required>
+        </p>
+        <p>
+            <label for="gender">Gender:</label><br>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+        </p>
+        <p>
+            <label for="mobile_number">Mobile Number:</label><br>
+            <input type="text" id="mobile_number" name="mobile_number" maxlength="15" required>
+        </p>
+        <p>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" maxlength="100">
+        </p>
+        <p>
+            <label for="gstno">GST Number:</label><br>
+            <input type="text" id="gstno" name="gstno" maxlength="20">
+        </p>
+        <p>
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required>
+        </p>
+        <p>
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" maxlength="200" required></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Submit">
+        </p>
+    </form>
+</body>
+</html>

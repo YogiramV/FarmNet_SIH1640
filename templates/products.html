@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 16px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            overflow: hidden;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card img {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .card-title {
+            font-size: 1.2em;
+            margin: 8px 0;
+            color: #333;
+        }
+        .card-content {
+            margin: 8px 0;
+            color: #666;
+        }
+        .card-footer {
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <h1>Products</h1>
+    <div class="card-container">
+        {% for item in datas %}
+            <div class="card">
+                <!-- Display image -->
+                <img src="{{ url_for('product_image', product_id=item.product.product_id) }}" alt="{{ item.product.name }}">
+                <div class="card-content">
+                    <div class="card-title">{{ item.product.name }}</div>
+                    <div>Farmer Name: {{ item.farmer_name }}</div>
+                    <div>Quantity: {{ item.product.quantity }}</div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
