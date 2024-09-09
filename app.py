@@ -149,7 +149,7 @@ def check_credentials():
     else:
         return render_template("failure.html")
 
-@app.route('/products')
+@app.route('/dashboard')
 def datas():
     all_datas = Products.query.all()
     products_with_farmer_names = []
@@ -163,7 +163,7 @@ def datas():
         }
         products_with_farmer_names.append(product_details)
 
-    return render_template('products.html', datas=products_with_farmer_names)
+    return render_template('dashboard.html', datas=products_with_farmer_names)
 
 @app.route('/farmers')
 def list_farmers():
