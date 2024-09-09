@@ -71,7 +71,7 @@ def add_product():
     return render_template('add_product.html')
 
 
-@app.route('/add-farmer', methods=['GET', 'POST'])
+@app.route('/register-farmer', methods=['GET', 'POST'])
 def add_farmer():
     if request.method == 'POST':
         name = request.form['name']
@@ -95,9 +95,9 @@ def add_farmer():
         db.session.add(new_farmer)
         db.session.commit()
         
-        return render_template('add_farmer.html')
+        return render_template('register_farmer.html')
 
-    return render_template('add_farmer.html')
+    return render_template('register_farmer.html')
 
 class Contracts(db.Model):
     contract_id = db.Column(db.Integer, primary_key=True, autoincrement=True)  # Added contract_id as primary key
